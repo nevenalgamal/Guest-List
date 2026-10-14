@@ -12,7 +12,6 @@ export default function GuestList({ setGuestId }){
     
     return (
     <>
-
     <h1> Guest List </h1>
     <table>
         <thead>

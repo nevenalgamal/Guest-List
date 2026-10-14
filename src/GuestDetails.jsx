@@ -1,5 +1,5 @@
 import { useState , useEffect} from "react";
-import { getGuest, getGuest} from "./api";
+import { getGuest } from "./api";
 export default function GuestDetails({ guestId, setGuestId }) {
   const [guest, setGuest] = useState(null);
   useEffect (()=> {

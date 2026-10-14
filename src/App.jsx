@@ -1,15 +1,16 @@
 import { useState } from "react";
-import  GuestList from "./GuestList.jsx";
+import GuestList from "./GuestList.jsx";
+import GuestDetails from "./GuestDetails.jsx";
 export default function App() {
   const [guestId, setGuestId] = useState(null);
 
-  
-
-  return <>
-  {guestId ? (
-    <GuestDetails guestId = {guestId} setGuestId={setGuestId}/>
-  ) : (
-   < GuestList setGuestId = {setGuestId}/>
-)}
-  </>;
+  return (
+    <>
+      {guestId ? (
+        <GuestDetails guestId={guestId} setGuestId={setGuestId} />
+      ) : (
+        <GuestList setGuestId={setGuestId} />
+      )}
+    </>
+  );
 }

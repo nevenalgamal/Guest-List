@@ -1,14 +1,14 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
+import { getGuests } from "./api";
 export default function GuestList({ setGuestId }){
-    const [ guests, setGuests ] = useState([
-        { 
-        id:1,      
-        name: "Neven",
-        email: "neven@hmail.com",
-        phone : "555-0100"
-        }
-    ])
+    const [ guests, setGuests ] = useState([]);
+    useEffect (() => {
+       async function loadGuests() {
+        const guests = await getGuests();
+        setGuests(guests);
+       }
+       loadGuests();
+    }, []);
     
     return (
     <>
